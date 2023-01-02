@@ -1,4 +1,4 @@
-# bot.py
+# ashabot1.py
 
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
@@ -12,15 +12,30 @@ CORPUS_FILE = "E:\\grameen\\chatbot\\my_code_1\\data_air\\FinalDFTrain.csv"
 #df1 = df.values.tolist()
 
 chatbot = ChatBot("asha1")
-#chatbot.storage.drop()
+#chatbot.storage.drop()     # use to unlearn if needed
 
 
 
-cleaned_corpus = divideFile(CORPUS_FILE)
-trainer = ListTrainer(chatbot)
+#### APP
+#query = input("> ")
+def chat_resp(query):
+    # chatbot.storage.drop()     # use to unlearn if needed
+    # cleaned_corpus = divideFile(CORPUS_FILE)
+    # trainer = ListTrainer(chatbot)
 
-trainer.train(cleaned_corpus)
+    # trainer.train(cleaned_corpus)
+    return(chatbot.get_response(query))
+"""
+    cleaned_corpus = divideFile(CORPUS_FILE)
+    trainer = ListTrainer(chatbot)
+
+    trainer.train(cleaned_corpus)
 #trainer.train(CORPUS_FILE)
+"""
+
+#print(f"🪴 {chatbot.get_response(query)}")
+    
+
 
 
 """
@@ -45,7 +60,7 @@ trainer.train([
 ])
 """
 
-
+"""
 exit_conditions = (":q", "quit", "exit")
 while True:
     query = input("> ")
@@ -53,4 +68,4 @@ while True:
         break
     else:
         print(f"🪴 {chatbot.get_response(query)}")
-        
+"""     
