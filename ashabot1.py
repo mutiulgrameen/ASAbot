@@ -3,10 +3,11 @@
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 #from cleaner import clean_corpus
-from cleaner2 import divideFile
+#from cleaner2 import divideFile
+from db_process import process_db
 #import pandas as pd
 
-CORPUS_FILE = "E:\\grameen\\chatbot\\my_code_1\\data_air\\FinalDFTrain.csv"
+#CORPUS_FILE = "E:\\grameen\\chatbot\\my_code_1\\data_air\\FinalDFTrain.csv"
 #df = pd.read_csv(CORPUS_FILE, header=None)
 
 #df1 = df.values.tolist()
@@ -20,9 +21,9 @@ chatbot = ChatBot("asha1")
 #query = input("> ")
 def chat_resp(query):
     # chatbot.storage.drop()     # use to unlearn if needed
-    # cleaned_corpus = divideFile(CORPUS_FILE)
+    # CORPUS_FILE = "E:\\grameen\\chatbot\\my_code_1\\data_air\\db_mental.db"     # path to dataset
+    # cleaned_corpus = process_db(CORPUS_FILE, 'Faq')
     # trainer = ListTrainer(chatbot)
-
     # trainer.train(cleaned_corpus)
     return(chatbot.get_response(query))
 """
